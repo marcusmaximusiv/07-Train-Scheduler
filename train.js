@@ -52,9 +52,9 @@ var config = {
   
     // Store All train data
     var trainname = childSnapshot.val().name;
-    var traindest = childSnapshot.val().role;
-    var firsttrain = childSnapshot.val().start;
-    var frequency = childSnapshot.val().rate;
+    var traindest = childSnapshot.val().dest;
+    var firsttrain = childSnapshot.val().firsttrain;
+    var frequency = childSnapshot.val().frequency;
   
     // Print to the log all train data
     console.log(trainname);
@@ -63,20 +63,20 @@ var config = {
     console.log(frequency);
   
     // Prettify the train startdate
-    var firsttrainPretty = moment.unix(firsttrain).format("MM/DD/YYYY");
+    var firsttrainPretty = moment.unix(firsttrain).format("HH:mm");
     // To calculate frequency of the trains and when they would come next
-    var empfrequency = moment().diff(moment(frequency, "X"), "hours");
+    var empfrequency = moment().diff(moment(frequency, "X"), "minutes");
     console.log(empfrequency);
-    //Calculates when the next train will arrive 
-    var nexttrain = 
+    //Calculates when the next train and when it will arrive 
+    var nexttrain = firsttrainPretty + empfrequency;
     console.log(nexttrain)
     // Create the new row
     var newRow = $("<tr>").append(
-      $("<td>").text(empName),
-      $("<td>").text(empRole),
+      $("<td>").text(trainname),
+      $("<td>").text(traindest),
       $("<td>").text(firsttrainPretty),
       $("<td>").text(empfrequency),
-      $("<td>").text(nextrain)
+      $("<td>").text(nexttrain)
     );
   
     // Append the new row to the table
