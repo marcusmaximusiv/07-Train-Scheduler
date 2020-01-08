@@ -17,8 +17,8 @@ var config = {
     // Grabs user input
     var trainname = $("#train-name-input").val().trim();
     var traindest = $("#destination-input").val().trim();
-    var firsttrain = moment($("#first-train-input").val().trim(), "MM/DD/YYYY").format("X");
-    var frequency = $("#frequency-input").val().trim();
+    var firsttrain = moment($("#first-train-input").val().trim(), "HH:mm").format("X");
+    var frequency = moment($("#frequency-input").val().trim(), "mm").format("X");
   
     // Creates local "temporary" object for holding train data
     var newTrain = {
@@ -65,18 +65,20 @@ var config = {
     // Prettify the train startdate
     var firsttrainPretty = moment.unix(firsttrain).format("HH:mm");
     // To calculate frequency of the trains and when they would come next
-    var empfrequency = moment().diff(moment(frequency, "X"), "minutes");
-    console.log(empfrequency);
+    var trainfrequency = moment.unix(frequency).format("mm");
+    console.log(trainfrequency);
     //Calculates when the next train and when it will arrive 
-    var nexttrain = firsttrainPretty + empfrequency;
+    var nexttrain = firsttrainPretty + trainfrequency;
+    nexttrainPretty = moment.unix(nexttrain).format("HH:mm")
     console.log(nexttrain)
+    console.log(nexttrainPretty)
     // Create the new row
     var newRow = $("<tr>").append(
       $("<td>").text(trainname),
       $("<td>").text(traindest),
       $("<td>").text(firsttrainPretty),
-      $("<td>").text(empfrequency),
-      $("<td>").text(nexttrain)
+      $("<td>").text(trainfrequency),
+      $("<td>").text(nexttrainPretty)
     );
   
     // Append the new row to the table

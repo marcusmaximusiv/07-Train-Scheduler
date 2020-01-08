@@ -72,7 +72,7 @@ database.ref().on("child_added", function(childSnapshot) {
   console.log(empRate);
 
   // Prettify the employee start
-  var empStartPretty = moment.unix(empStart).format("MM/DD/YYYY");
+  var empStartPretty = moment.unix(empStart).format("HH:mm");
 
   // Calculate the months worked using hardcore math
   // To calculate the months worked
