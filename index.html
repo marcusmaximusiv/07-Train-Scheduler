@@ -20,10 +20,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
   <style>
-    #employee-table th,
+    #train-table th,
     td {
       display: inline-block;
-      width: 25%;
+      width: 20%;
     }
   </style>
 </head>
@@ -43,17 +43,18 @@
 
       <div class="col-md-12">
 
-        <!-- Current Employees-->
+        <!-- Current Trains-->
         <div class="card mb-4">
           <div class="card-header">Train Scheduler</div>
           <div class="card-body">
-            <table class="table table-sm table-hover" id='employee-table'>
+            <table class="table table-sm table-hover" id='train-table'>
               <thead>
                 <tr>
                   <th scope="col">Train Name</th>
                   <th scope="col">Destination</th>
                   <th scope="col">First Train Time</th>
                   <th scope="col">Frequency</th>
+                  <th scope="col">Next Train Scheduled for</th>
                 </tr>
               </thead>
               <tbody>
@@ -66,7 +67,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <!-- Add Employee  -->
+        <!-- Add Train  -->
         <div class="card mb-4">
           <div class="card-header">Add Train</div>
           <div class="card-body">

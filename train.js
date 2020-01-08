@@ -20,7 +20,7 @@ var config = {
     var firsttrain = moment($("#first-train-input").val().trim(), "MM/DD/YYYY").format("X");
     var frequency = $("#frequency-input").val().trim();
   
-    // Creates local "temporary" object for holding employee data
+    // Creates local "temporary" object for holding train data
     var newTrain = {
       name: trainname,
       dest: traindest,
@@ -28,10 +28,10 @@ var config = {
       frequency: frequency
     };
   
-    // Uploads employee data to the database
+    // Uploads new train data to the database
     database.ref().push(newTrain);
   
-    // Logs everything to console
+    // Logs all values of newTrain to console
     console.log(newTrain.name);
     console.log(newTrain.traindest);
     console.log(newTrain.firsttrain);
@@ -46,36 +46,37 @@ var config = {
     $("#rate-input").val("");
   });
   
-  // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
+  // 3. Create Firebase event for adding trains to the database and a row in the html when a user adds an entry
   database.ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val());
   
-    // Store everything into a variable.
+    // Store All train data
     var trainname = childSnapshot.val().name;
     var traindest = childSnapshot.val().role;
     var firsttrain = childSnapshot.val().start;
     var frequency = childSnapshot.val().rate;
   
-    // Employee Info
+    // Print to the log all train data
     console.log(trainname);
     console.log(traindest);
     console.log(firsttrain);
     console.log(frequency);
   
-    // Prettify the employee start
+    // Prettify the train startdate
     var firsttrainPretty = moment.unix(firsttrain).format("MM/DD/YYYY");
-  
-    // Calculate the months worked using hardcore math
-    // To calculate the months worked
+    // To calculate frequency of the trains and when they would come next
     var empfrequency = moment().diff(moment(frequency, "X"), "hours");
     console.log(empfrequency);
-  
+    //Calculates when the next train will arrive 
+    var nexttrain = 
+    console.log(nexttrain)
     // Create the new row
     var newRow = $("<tr>").append(
       $("<td>").text(empName),
       $("<td>").text(empRole),
       $("<td>").text(firsttrainPretty),
-      $("<td>").text(empfrequency)
+      $("<td>").text(empfrequency),
+      $("<td>").text(nextrain)
     );
   
     // Append the new row to the table
