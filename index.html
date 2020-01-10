@@ -7,6 +7,7 @@
   <meta charset="UTF-8">
   <title>Train Scheduler</title>
 
+
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,54 +19,37 @@
 
   <!-- Moment.js Reference -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-
-  <style>
-    #train-table th,
-    td {
-      display: inline-block;
-      width: 20%;
-    }
-  </style>
 </head>
 
-<body>
+<body style="background-color:black;">
 
   <!-- Train Scheduler -->
   <div class="container">
+     <div class="jumbotron" style="background-color:black; color:white;">
+   <h1 style="text-align: center">Train Scheduler</h1>
+   <p style="text-align: center">Know when and how often the trains will run</p>
+   </div>
+   
+<div class="container">
+  <div class="col-md-12">
+  	   <table class="table table-dark" style="text-align:center;">
+   			<thead>
+   				<tr>
+   					<th scope="destination">Train Name</th>
+   					<th scope="destination">Destination</th>
+   					<th scope="train_time">First Train Name</th>
+   					<th scope="frequency">Frequency</th>
+   					<th scope="next_train">Next Train Scheduled</th>
+   				</tr>
+   			</thead>
+   			<tbody>
+   			</tbody>
+   		</table>
+   	</div>
+</div>
 
-    <!-- Jumbotron -->
-    <div class="jumbotron" style="background-color: black; color: white">
-      <h1 class="text-center">Train Scheduler</h1>
-      <h3 class="text-center">A Comprehensive List of Train Times</h3>
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-12">
-
-        <!-- Current Trains-->
-        <div class="card mb-4">
-          <div class="card-header">Train Scheduler</div>
-          <div class="card-body">
-            <table class="table table-sm table-hover" id='train-table'>
-              <thead>
-                <tr>
-                  <th scope="col">Train Name</th>
-                  <th scope="col">Destination</th>
-                  <th scope="col">First Train Time</th>
-                  <th scope="col">Frequency</th>
-                  <th scope="col">Next Train Scheduled for</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
+   
+<div class="container" id="train table">
       <div class="col-md-12">
         <!-- Add Train  -->
         <div class="card mb-4">
@@ -73,7 +57,7 @@
           <div class="card-body">
 
             <!-- Entry Form -->
-            <form>
+            <form style="background-color: white;">
               <div class="form-group">
                 <label for="train-name-input">Train Name</label>
                 <input class="form-control" id="train-name-input" placeholder="Polar Express" type="text">
@@ -90,15 +74,14 @@
                 <label for="frequency-input">Frequency</label>
                 <input class="form-control" id="frequency-input" placeholder="2000" type="text">
               </div>
-              <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
+              <button class="btn btn-primary float-right" id="add-train-btn" style="background-color:black; border-color:black;">Submit</button>
             </form>
-
           </div>
         </div>
       </div>
     </div>
 
-  </div>
+	
 
   <!-- JavaScript -->
   <script src="train.js"></script>
