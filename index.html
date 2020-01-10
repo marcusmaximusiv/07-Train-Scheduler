@@ -30,9 +30,9 @@
    <p style="text-align: center">Know when and how often the trains will run</p>
    </div>
    
-<div class="container">
+<div class="container" style="border-color:white;">
   <div class="col-md-12">
-  	   <table class="table table-dark" style="text-align:center;">
+  	   <table class="table table-dark" style="text-align:center; border-color:white;">
    			<thead>
    				<tr>
    					<th scope="destination">Train Name</th>
@@ -49,16 +49,16 @@
 </div>
 
    
-<div class="container" id="train table">
+<div class="container" id="train_form" style="margin-top: 50px;">
       <div class="col-md-12">
         <!-- Add Train  -->
         <div class="card mb-4">
-          <div class="card-header">Add Train</div>
-          <div class="card-body">
+          <div class="card-header" style="background-color:black;color:white; border-color:white;font-weight:bold;">Add Train</div>
+          <div class="card-body" style="background-color:black; font-weight: bold;">
 
             <!-- Entry Form -->
-            <form style="background-color: white;">
-              <div class="form-group">
+            <form style="background-color:black; color: white">
+              <div class="form-group" style="background-color:black;">
                 <label for="train-name-input">Train Name</label>
                 <input class="form-control" id="train-name-input" placeholder="Polar Express" type="text">
               </div>
@@ -74,7 +74,7 @@
                 <label for="frequency-input">Frequency</label>
                 <input class="form-control" id="frequency-input" placeholder="2000" type="text">
               </div>
-              <button class="btn btn-primary float-right" id="add-train-btn" style="background-color:black; border-color:black;">Submit</button>
+              <button class="btn btn-primary float-right" id="add-train-btn" style="background-color:white; border-color:white; color:black">Submit</button>
             </form>
           </div>
         </div>
