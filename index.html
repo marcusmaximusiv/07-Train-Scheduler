@@ -19,6 +19,8 @@
 
   <!-- Moment.js Reference -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <!--Link to the internal CSS to customize the page-->
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body style="background-color:black;">
@@ -32,9 +34,9 @@
    
 <div class="container" style="border-color:white;">
 <div class="card mb-4">
-          <div class="card-body" style="background-color:black; font-weight: bold;">
-  <div class="col-md-12">
-  	   <table class="table table-dark" style="text-align:center; border-color:white;">
+<div class="card-body" style="background-color:black; font-weight: bold;">
+<div class="col-md-12">
+  	   <table class="table table-dark" id="train-table" style="text-align:center; border-color:white;">
    			<thead>
    				<tr>
    					<th scope="destination">Train Name</th>
@@ -47,7 +49,7 @@
    			<tbody>
    			</tbody>
    		</table>
-   	</div>
+</div>
 </div>
 </div>
 </div>
