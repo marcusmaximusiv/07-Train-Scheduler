@@ -7,7 +7,7 @@
   	};
   	firebase.initializeApp(config);
   	var database = firebase.database();
-//2. Have an onclick event for the adding a train button
+//2. Have an on-click event for the adding a train button
 	$("#add-train-btn").on("click", function(event) {
     event.preventDefault();
 //3. Have variables to store all of the form data
@@ -18,21 +18,32 @@
 //4. Create a temporary object to hold all the data from the form
 	var newTrain = {
 		name: trainname,
-		dest: dest
+		dest: dest,
 		freq: freq,
 		firsttrain: firsttrain
-};
-//5. log newtrain object to make sure form values entered by user are correct
+	};
+//5. print newTrain object variables to the console to make sure form values entered by user are being recorded 
 	console.log(newTrain.trainname);
 	console.log(newTrain.dest);
 	console.log(newTrain.firsttrain);
 	console.log(newTrain.freq);
-//6. Push new data to the temporary object
+//6. Clear form of all entries the user has entered in for the train 
+	$("#train-name-input").val("");
+    $("#destination-input").val("");
+    $("#first-train-input").val("");
+    $("#frequency-input").val("");
+//7. Push new data to the temporary object
 	database.ref().push(newTrain);
-//7. Notifies the user that the information from the form is recorded 
+//8. Notifies the user that the information from the form is recorded 
 	alert("You entry has been successfully recorded")
-//8. Clear form of all entries the user has entered in for the train 
-	$(“#train-name-input").val("");
-    $(“#destination-input").val("");
-    $(“#firsttrain-input").val("");
-    $(“#frequency-input").val("");
+});
+//This section of the code takes the code shown in the above 8 steps and then renders it to the page along with recording it to firebase
+	
+//9. create the variable for calculating the updated time using the new variables
+	var updatedtime=moment().add( , 'minutes');
+//10. log to the console the updated time
+	console.log(updatedtime);
+//11. append the value you enter to the table body of the table at the top
+	
+	
+
