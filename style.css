@@ -1,0 +1,50 @@
+
+#results{
+  border-color:white;
+}
+#train-form{
+  margin-top: 50px;
+}
+.card-header{
+  background-color:black;
+  color:white; 
+  border-color:white;
+  font-weight:bold; 
+  text-align:center;
+}
+.table table-dark{
+  background-color:black;
+  color:white; 
+  border-color:white;
+  font-weight:bold; 
+  text-align:center;
+}
+form{
+  background-color:black; 
+  color: white;
+}
+.card-body{
+  background-color:black; 
+  font-weight: bold;
+}
+#add-train-btn{
+  background-color:white; 
+  border-color:white; 
+  color:black;
+}
+.form-group{
+  background-color:black;
+}
+.jumbotron{
+  background-color:black; 
+  color:white;
+}
+body{
+  background-color:black;
+}
+h1{
+  text-align: center;
+}
+p{
+  text-align: center;
+}
